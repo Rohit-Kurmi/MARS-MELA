@@ -16,7 +16,7 @@ namespace MARS_MELA.Models
         public string EmailID { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
-        //[DataType(DataType.Password)]
+        [DataType(DataType.Password)]
 
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
                ErrorMessage = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.")]
@@ -25,7 +25,7 @@ namespace MARS_MELA.Models
 
 
         [Required(ErrorMessage = "Confirm Password is required")]
-        //[DataType(DataType.Password)]
+        [DataType(DataType.Password)]
         [Compare("PasswordHash", ErrorMessage = "Password and Confirm Password do not match")]
         public string ConfirmPassword { get; set; }
     }

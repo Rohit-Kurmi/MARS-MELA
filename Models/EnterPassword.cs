@@ -10,7 +10,7 @@ namespace MARS_MELA.Models
 
 
         [Required(ErrorMessage = "Password is required")]
-        //[DataType(DataType.Password)]
+        [DataType(DataType.Password)]
        public string PasswordHash { get; set; }
 
     }
