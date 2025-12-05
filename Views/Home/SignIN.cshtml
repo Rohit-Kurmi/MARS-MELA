@@ -1,0 +1,48 @@
+﻿@model MARS_MELA.Models.SignIN;
+
+@{
+    ViewData["Title"] = "SignIN";
+}
+
+<h1>SignIN</h1>
+@if (ViewBag.msg != null)
+{
+    <script>
+        alert("@ViewBag.msg");
+    </script>
+}
+
+@if (TempData["Success1"] != null)
+{
+    <script>
+        alert("@TempData["Success1"]");
+    </script>
+}
+
+
+<form asp-action="SignIN" asp-controller="Home" method="post">
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <input asp-for="MobileNo" class="form-control" placeholder="MobileNo" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="submit" value="submit" class="btn btn-outline-primary w-100" />
+
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+

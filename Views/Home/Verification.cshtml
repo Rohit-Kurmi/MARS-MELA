@@ -1,0 +1,90 @@
+﻿@model MARS_MELA.Models.Verification
+
+
+
+@{
+    ViewData["Title"] = "Verification";
+}
+
+@{
+    if (TempData["message"] != null)
+    {
+        <script>alert("@TempData["message"]")</script>
+    }
+}
+
+<h1>User Verification</h1>
+
+<form asp-action="Verification" asp-controller="Home" method="post">
+    <div class="container">
+
+        <br /><br />
+
+        <!-- Mobile -->
+        <div class="row">
+            <div class="col-sm-4">
+                @if (TempData["Mobile"] != null)
+                {
+                    <input asp-for="MobileNo" class="form-control" value="@TempData["Mobile"]" readonly />
+                }
+                else
+                {
+                    <input asp-for="MobileNo" class="form-control" placeholder="MobileNo" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                }
+            </div>
+        </div>
+
+        <br /><br />
+
+        <!-- Email -->
+        <div class="row">
+            <div class="col-sm-4">
+                @if (TempData["Email"] != null)
+                {
+                    <input asp-for="EmailID" class="form-control" value="@TempData["Email"]" readonly />
+                }
+                else
+                {
+                    <input asp-for="EmailID" class="form-control" placeholder="EmailID" />
+                    <span asp-validation-for="EmailID" class="text-danger"></span>
+                }
+            </div>
+        </div>
+
+        <br />
+
+        <!-- OTP -->
+        <div class="row">
+            <div class="col-sm-2">
+                <input asp-for="OTPCode" class="form-control" placeholder="Enter OTP" />
+                <span asp-validation-for="OTPCode" class="text-danger"></span>
+                <br />
+            </div>
+
+            <div class="col-sm-2">
+                <input type="submit" value="Send_OTP" name="actiontype" class="btn btn-outline-primary w-100" />
+
+                @if (TempData["OTPMessage"] != null)
+                {
+                    <div class="alert alert-info mt-2">@TempData["OTPMessage"]</div>
+                }
+            </div>
+        </div>
+
+        <br />
+
+        <!-- Submit -->
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="submit" class="btn btn-outline-primary w-100" value="Submit" name="actiontype" />
+            </div>
+        </div>
+
+        @if (TempData["Error"] != null)
+        {
+            <script>alert("@TempData["Error"]");</script>
+        }
+
+    </div>
+</form>
