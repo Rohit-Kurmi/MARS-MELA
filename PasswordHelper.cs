@@ -6,12 +6,12 @@ namespace MARS_MELA
     public class PasswordHelper
     {
 
-        public string ComputeSha256Hash(string rawPassword)
+        public string ComputeSha512Hash(string rawPassword)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            using (SHA512 sha512 = SHA512.Create())
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(rawPassword);
-                byte[] hashBytes = sha256.ComputeHash(bytes);
+                byte[] hashBytes = sha512.ComputeHash(bytes);
 
                 // Convert hash bytes to hex string
                 StringBuilder sb = new StringBuilder();
@@ -23,5 +23,6 @@ namespace MARS_MELA
                 return sb.ToString();
             }
         }
+
     }
 }

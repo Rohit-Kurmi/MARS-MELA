@@ -11,4 +11,19 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="EncyptionManager">
+      <HintPath>\\172.16.8.11\Services\PSP 2.0\G2C-B2C Services\MARS Project\encrypt\EncyptionManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MPODecryptStaging">
+      <HintPath>\\172.16.8.11\Services\PSP 2.0\G2C-B2C Services\MARS Project\encrypt\MPODecryptStaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MPOEncryptStaging">
+      <HintPath>\\172.16.8.11\Services\PSP 2.0\G2C-B2C Services\MARS Project\encrypt\MPOEncryptStaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
 </Project>

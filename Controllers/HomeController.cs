@@ -266,7 +266,7 @@ namespace MARS_MELA.Controllers
                 // Step 1: Hash the password using SHA256
                 // This ensures the password is stored securely in the database
                 PasswordHelper passclass = new PasswordHelper();
-                string hashedPassword = passclass.ComputeSha256Hash(creatpass.PasswordHash);
+                string hashedPassword = passclass.ComputeSha512Hash(creatpass.PasswordHash);
 
                 // Step 2: Save the hashed password in the database
                 // DAL.SavePassword returns the number of rows affected
@@ -321,7 +321,7 @@ namespace MARS_MELA.Controllers
                 // Step 1: Hash the entered password using SHA256
                 // This ensures we compare hashed passwords with the database
                 PasswordHelper passclass = new PasswordHelper();
-                string hashedPassword = passclass.ComputeSha256Hash(enterpass.PasswordHash);
+                string hashedPassword = passclass.ComputeSha512Hash(enterpass.PasswordHash);
 
                 // Step 2: Check login credentials in the database
                 // DAL.SignIN returns:
